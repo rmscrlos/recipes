@@ -10,7 +10,7 @@ const Form = () => {
 		setIsSubmitted(true);
 	}
 	return (
-		<>
+		<div className="main-container">
 			<div className="form-container">
 				<span className="close-btn">x</span>
 				<div className="form-content-left">
@@ -23,7 +23,7 @@ const Form = () => {
 					<Login />
 				</Route>
 			</div>
-		</>
+		</div>
 	);
 };
 
