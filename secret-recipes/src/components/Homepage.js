@@ -1,6 +1,5 @@
-// import React from 'react';
+import React from 'react';
 
-<<<<<<< HEAD
 function Homepage() {
 	return (
 		<div>
@@ -16,10 +15,5 @@ function Homepage() {
 		</div>
 	);
 }
-=======
-// function Homepage() {
-// 	return <div></div>;
-// }
->>>>>>> fb064f215e0c71a63d216c2d13286166ac9ec40b
 
-// export default Homepage;
+export default Homepage;
