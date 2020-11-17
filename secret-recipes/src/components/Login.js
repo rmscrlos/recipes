@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import * as yup from 'yup';
@@ -107,5 +108,12 @@ function Login() {
 		</>
 	);
 }
+=======
+// import React from 'react';
 
-export default Login;
+// function Login() {
+// 	return <div></div>;
+// }
+>>>>>>> fb064f215e0c71a63d216c2d13286166ac9ec40b
+
+// export default Login;

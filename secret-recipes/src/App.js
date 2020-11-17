@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React from 'react';
 import { Route, Link, Switch, Router } from 'react-router-dom';
 import './App.css';
@@ -19,6 +20,18 @@ function App() {
 			</Switch>
 		</div>
 	);
+=======
+import React from 'react'
+import './App.css';
+import Form from './components/Form'
+
+
+
+function App() {
+	return <Form />
+	
+>>>>>>> fb064f215e0c71a63d216c2d13286166ac9ec40b
 }
 
 export default App;
+
