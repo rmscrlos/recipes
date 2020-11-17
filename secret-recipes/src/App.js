@@ -3,17 +3,16 @@ import { Route, Link, Switch, Router } from 'react-router-dom';
 import './App.css';
 import Form from './components/Form';
 import Login from './components/Login';
-import Homapage from './components/Homepage';
 import Homepage from './components/Homepage';
 
 function App() {
 	return (
 		<div>
 			<Switch>
-				<Route path="/">
+				<Route exact path="/">
 					<Form />
 				</Route>
-				<Route path="/homepage">
+				<Route exact path="/homepage">
 					<Homepage />
 				</Route>
 			</Switch>
