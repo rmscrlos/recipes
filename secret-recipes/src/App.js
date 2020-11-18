@@ -2,16 +2,16 @@ import React from 'react';
 import { Route, Link, Switch, Router } from 'react-router-dom';
 import './App.css';
 import Form from './components/Form';
-import Login from './components/Login';
 import Homepage from './components/Homepage';
+import PrivateRoute from './PrivateRoute';
 
 function App() {
 	return (
 		<div>
 			<Switch>
-				<Route path="/">
+				<PrivateRoute path="/">
 					<Form />
-				</Route>
+				</PrivateRoute>
 				<Route path="/homepage">
 					<Homepage />
 				</Route>

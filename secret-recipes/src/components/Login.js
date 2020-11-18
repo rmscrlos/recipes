@@ -1,8 +1,8 @@
-<<<<<<< HEAD
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import * as yup from 'yup';
-import axios from 'axios';
+// import axios from 'axios';
+import { axiosWithAuth } from '../axiosWithAuth';
 
 const formSchema = yup.object().shape({
 	username: yup.string().required('Must enter username'),
@@ -10,6 +10,7 @@ const formSchema = yup.object().shape({
 });
 
 function Login() {
+
 	//form state
 	const [formState, setFormState] = useState({
 		username: '',
@@ -67,6 +68,15 @@ function Login() {
 		});
 	};
 
+	const protectedLogin = e => {
+		e.preventDefault();
+		axiosWithAuth().post('https://lambda-secret-family-recipes-1.herokuapp.com/api/login', formState)
+		  .then(res => {
+			localStorage.setItem('token', res.data.token);
+			this.props.history.push('/');
+		  })
+	  }
+
 	console.log(formState);
 
 	return (
@@ -108,12 +118,5 @@ function Login() {
 		</>
 	);
 }
-=======
-// import React from 'react';
 
-// function Login() {
-// 	return <div></div>;
-// }
->>>>>>> fb064f215e0c71a63d216c2d13286166ac9ec40b
-
-// export default Login;
+export default Login;
