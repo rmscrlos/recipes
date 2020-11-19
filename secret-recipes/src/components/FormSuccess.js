@@ -8,7 +8,6 @@ const FormSuccess = () => {
 			<div className="form-success">
 				We have received your request. Go back to <Link to="/">Log in</Link> page.
 			</div>
-			<img className="form-img-2" src="Img/Img.png" alt="Success" />
 		</div>
 	);
 };

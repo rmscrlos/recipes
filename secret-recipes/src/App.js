@@ -11,7 +11,7 @@ function App() {
 			{/* <Homepage /> */}
 
 			<Switch>
-				<Route exact path="/">
+				<Route path="/">
 					<Form />
 				</Route>
 				<PrivateRoute exact path="/homepage">
