@@ -3,9 +3,11 @@ import validateInfo from './validateInfo';
 import useForm from './UseForm';
 import { Link } from 'react-router-dom';
 import './Form.css';
+import axios from 'axios';
 
 const FormSignup = ({ submitForm }) => {
 	const { handleChange, handleSubmit, values, errors } = useForm(submitForm, validateInfo);
+
 	return (
 		<div className="form-content-right">
 			<form onSubmit={handleSubmit} className="form" noValidate>
@@ -25,21 +27,6 @@ const FormSignup = ({ submitForm }) => {
 				</div>
 
 				<div className="form-inputs">
-					<label htmlFor="email" className="form-label">
-						Email:
-					</label>
-					<input
-						className="form-input"
-						type="email"
-						name="email"
-						placeholder="Enter your Email"
-						value={values.email}
-						onChange={handleChange}
-					/>
-					{errors.email && <p>{errors.email}</p>}
-				</div>
-
-				<div className="form-inputs">
 					<label className="form-label">Password:</label>
 					<input
 						className="form-input"
@@ -50,19 +37,6 @@ const FormSignup = ({ submitForm }) => {
 						onChange={handleChange}
 					/>
 					{errors.password && <p>{errors.password}</p>}
-				</div>
-
-				<div className="form-inputs">
-					<label className="form-label">Confirm Password:</label>
-					<input
-						className="form-input"
-						type="password"
-						name="password2"
-						placeholder="Confirm Your Password"
-						value={values.password2}
-						onChange={handleChange}
-					/>
-					{errors.password2 && <p>{errors.password2}</p>}
 				</div>
 
 				<button className="form-input-btn" type="submit">

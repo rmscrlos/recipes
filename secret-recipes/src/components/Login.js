@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
+
 import * as yup from 'yup';
-// import axios from 'axios';
-import { axiosWithAuth } from '../axiosWithAuth';
+import axios from 'axios';
+import axiosWithAuth from '../axiosWithAuth';
 
 const formSchema = yup.object().shape({
 	username: yup.string().required('Must enter username'),
@@ -10,13 +11,13 @@ const formSchema = yup.object().shape({
 });
 
 function Login() {
-
 	//form state
 	const [formState, setFormState] = useState({
 		username: '',
 		password: ''
 	});
 
+	const history = useHistory();
 	//error state
 	const [errorState, setErrorState] = useState({
 		username: '',
@@ -62,20 +63,14 @@ function Login() {
 	//submit handler
 	const handleSubmit = e => {
 		e.preventDefault();
-		setFormState({
-			username: '',
-			password: ''
-		});
+		axios
+			.post('https://lambda-secret-family-recipes-1.herokuapp.com/api/login', formState)
+			.then(res => {
+				localStorage.setItem('token', res.data.token);
+				history.push('/homepage');
+			})
+			.catch(err => console.log(err));
 	};
-
-	const protectedLogin = e => {
-		e.preventDefault();
-		axiosWithAuth().post('https://lambda-secret-family-recipes-1.herokuapp.com/api/login', formState)
-		  .then(res => {
-			localStorage.setItem('token', res.data.token);
-			this.props.history.push('/');
-		  })
-	  }
 
 	console.log(formState);
 

@@ -8,13 +8,15 @@ import PrivateRoute from './PrivateRoute';
 function App() {
 	return (
 		<div>
+			{/* <Homepage /> */}
+
 			<Switch>
-				<PrivateRoute path="/">
+				<Route exact path="/">
 					<Form />
-				</PrivateRoute>
-				<Route path="/homepage">
-					<Homepage />
 				</Route>
+				<PrivateRoute exact path="/homepage">
+					<Homepage />
+				</PrivateRoute>
 			</Switch>
 		</div>
 	);
