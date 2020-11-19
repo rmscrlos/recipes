@@ -1,0 +1,12 @@
+.recipe-container {
+	width: 33%;
+	margin: 2rem;
+	padding: 2rem;
+	box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 7px 20px 0 rgba(0, 0, 0, 0.2);
+	display: flex;
+	flex-direction: column;
+}
+
+.recipe-container .author {
+	margin-bottom: 1rem;
+}

@@ -34,9 +34,81 @@ nav h1 {
 	background: rgb(0, 134, 211);
 }
 
-.recipes-container h1 {
+.showcase-content {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.showcase-content button {
+	border: none;
+	margin-top: 2rem;
+	font-size: 0.8rem;
+	padding: 0.5rem 0.4rem;
+	background: rgb(0, 134, 211);
+	color: #fff;
+	text-decoration: none;
+}
+
+.showcase-content h2 {
 	margin-top: 2rem;
 	text-transform: uppercase;
 	letter-spacing: 0.2rem;
 	text-align: center;
+}
+
+.recipes {
+	display: flex;
+	justify-content: center;
+	flex-flow: row wrap;
+	width: 100%;
+}
+
+.add-recipe-form {
+	position: absolute;
+	top: 0px;
+	height: 100%;
+	width: 100%;
+	background: rgba(0, 0, 0, 0.1);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.add-recipe-form form {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	background: rgb(0, 134, 211);
+	width: 50%;
+	border-radius: 1rem;
+	box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 7px 20px 0 rgba(0, 0, 0, 0.2);
+	padding: 2rem;
+}
+
+.add-recipe-form h1 {
+	font-size: 1.5rem;
+	text-transform: uppercase;
+	color: #fff;
+}
+
+.add-recipe-form label {
+	display: inline-block;
+	color: #fff;
+}
+
+.add-recipe-form input,
+.add-recipe-form textarea {
+	display: block;
+	padding: 0.5rem;
+	margin-bottom: 0.8rem;
+	border: none;
+	border-radius: 5px;
+}
+
+.close {
+	position: relative;
+	left: 200px;
 }

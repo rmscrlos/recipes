@@ -4,6 +4,7 @@ import './App.css';
 import Form from './components/Form';
 import Homepage from './components/Homepage';
 import PrivateRoute from './PrivateRoute';
+import Recipe from './components/Recipe';
 
 function App() {
 	return (
