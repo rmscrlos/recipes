@@ -11,12 +11,12 @@ function App() {
 			{/* <Homepage /> */}
 
 			<Switch>
-				<Route exact path="/">
-					<Form />
-				</Route>
 				<PrivateRoute exact path="/homepage">
 					<Homepage />
 				</PrivateRoute>
+				<Route path="/">
+					<Form />
+				</Route>
 			</Switch>
 		</div>
 	);
