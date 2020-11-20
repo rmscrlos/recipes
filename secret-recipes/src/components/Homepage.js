@@ -5,28 +5,11 @@ import axiosWithAuth from '../axiosWithAuth';
 import Recipe from './Recipe';
 import { Route, Link } from 'react-router-dom';
 
-function Homepage() {
+function Homepage({ recipes, setRecipes }) {
 	//display add recipe form
 	const [hidden, setHidden] = useState(false);
 	//data
-	const data = [
-		{
-			id: 1,
-			title: 'Scrambled Eggs',
-			source: 'Mom',
-			ingredients: '2 eggs',
-			instructions: 'Scramble eggs in the pan'
-		},
-		{
-			id: 2,
-			title: 'PB&J',
-			ingredients: `2 slices of bread \n 1tsp jam \n 1tbsp peanut butter`,
-			instructions: '1. Spread jam and peanut butter onto bread \n 2. Smush bread togther',
-			notes: 'Whole wheat bread is tastiest! Strawberry jam highly recommended.'
-		}
-	];
-	// recipes
-	const [recipes, setRecipes] = useState(data);
+
 	const [newRecipe, setNewRecipe] = useState({ title: '', source: '', ingredients: '', instruction: '' });
 
 	//onChange
@@ -56,14 +39,6 @@ function Homepage() {
 		setRecipes([newRec, ...recipes]);
 	};
 
-	//delete recipes
-	const deleteRecipe = id => {
-		const updatedRecipe = [...recipes];
-		const indexOfRecipeToDelete = updatedRecipe.findIndex(note => note.id === id);
-		updatedRecipe.splice(indexOfRecipeToDelete, 1);
-		setRecipes(updatedRecipe);
-	};
-
 	// useEffect(() => {
 	// 	axios
 	// 		.get('https://api.spoonacular.com/recipes/')
@@ -75,16 +50,6 @@ function Homepage() {
 
 	return (
 		<div className="showcase">
-			<nav>
-				<h1>Secret Recipes</h1>
-				<div className="search-container">
-					<form>
-						<input type="text" />
-						<button>Search</button>
-					</form>
-				</div>
-			</nav>
-
 			<div className="showcase-content">
 				<h2>Recipes</h2>
 				<button onClick={() => setHidden(true)}>Add Recipe</button>
@@ -143,14 +108,15 @@ function Homepage() {
 			) : null}
 
 			<div className="recipes">
-				{recipes.map(rec => (
-					<Recipe key={rec.id} recipe={rec} deleteRecipe={deleteRecipe} />
+				{recipes.map(recipe => (
+					<Link key={recipe.id} to={`/homepage/${recipe.id}`}>
+						<div className="recipe-card">
+							<h2>{recipe.title}</h2>
+							<p>{recipe.source ? recipe.source : 'n/a'}</p>
+						</div>
+					</Link>
 				))}
 			</div>
-
-			<Route exact path="/homepage/:id">
-				<Recipe />
-			</Route>
 		</div>
 	);
 }

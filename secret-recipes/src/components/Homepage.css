@@ -58,11 +58,45 @@ nav h1 {
 	text-align: center;
 }
 
+.recipes a {
+	width: 33%;
+	text-decoration: none;
+	color: rgb(28, 28, 28);
+}
+
 .recipes {
 	display: flex;
 	justify-content: center;
 	flex-flow: row wrap;
 	width: 100%;
+	position: relative;
+}
+
+.recipe-card {
+	margin: 2rem 5rem;
+	padding: 2rem;
+	box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 7px 20px 0 rgba(0, 0, 0, 0.2);
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: flex-start;
+	border-radius: 1rem;
+	position: relative;
+}
+
+.recipes button {
+	border: none;
+	margin-top: 2rem;
+	font-size: 0.8rem;
+	padding: 1rem;
+	background: none;
+	color: rgb(0, 134, 211);
+	font-weight: bold;
+	font-size: 1.2rem;
+	text-decoration: none;
+	position: absolute;
+	right: 5%;
+	top: -20%;
 }
 
 .add-recipe-form {
